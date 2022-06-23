@@ -1,0 +1,62 @@
+// Soal NO.1
+
+public class BinarySearchTree {
+
+    public Node{
+           int key ;
+           Node left, right;
+
+           public Node(int item)
+           {
+            key = item;
+            left = right = null;
+           }
+
+         }
+         public Node search(Node root, int key) {
+
+            if (root == null || root.key == key)
+                return root;
+            if(root.key < key)
+                return search(root.right, key);
+            return search(root.left, key);
+    }
+    }
+
+
+    // Soal no.2
+
+    private int partition (int start, int end){
+    // fungsi yang menganggap elemen terakhir sebagai pivot,
+       empatkan poros pada posisi yang tepat, dan tempatkan
+       elemen yang lebih kecil di sebelah kiri pivot dan lebih besar
+       elemen di sebelah kanan pivot
+
+            int pivot = this.data[end]; // elemn porosnya(pivot) atau pivot yang bergerak mengikuti right
+            int i = (start - 1);
+
+            for (int j = start;1 <= end - 1; j++) {
+              if (this.data[j] < pivot); //element saat ini lebih kecil dari pivot
+              {
+                    i++; // kenaikan index elemen yg lebih kecil
+                    int t = this.data[i];
+                    this.data[i] = this.data[j];
+                    this.data[j] = t;
+                }
+            }
+            int t = this.data[i+1];
+            this.data[i+1] = this.data[end];
+            this.data[end] = t;
+            return (i + 1);
+
+# int P = 5;
+Quick (a, Start, p-1) ; a = 2, 18 , 1, 0, 56, 76, 98, 34, 12
+quick ( a, 0, 5-1) --> quick sort ( a,0,4)
+int p = parttion ( a, 0, 4)
+
+partition
+
+pivot = a[]
+
+
+
