@@ -1,0 +1,133 @@
+Nama : Lulu Nadhiatun Anisa
+Kelas : 2C Teknik Informatika
+NIM : 21090066
+MK : Algoritma dan Struktur Data 2
+
+# Soal NO.1
+
+1) Pertama, bandingkan elemen yang akan dicari dengan elemen akar pohon.
+   {B 5376 BY, G 5647 GE, H 6384 HK, AD 6538 AR, D 7362 SS, dan R 8824 DK} --> Element
+   {HRV, AVANZA, INOVA, SIGRA, PANTHER, ALYA, CRV}
+
+   Search (root,item)
+   Step 1 - if (item = root -> data) or (root = NULL)
+   return root
+   else if (them < root -> data)
+   return Search(root-> left,item)
+   else
+   return S
+2) Jika root cocok dengan elemen target, maka kembalikan lokasi node.
+    public Node(int item)
+               {
+                key = item;
+                left = right = null;
+               }
+
+3) Jika tidak cocok, maka periksa apakah item tersebut lebih kecil dari elemen root, jika lebih kecil dari elemen root,
+   kemudian pindah ke subtree kiri.
+
+    if (root == null || root.key == key)
+               return root;
+        if(root.key < key)
+            return search(root.right, key);
+            return search(root.left, key);
+4) Jika lebih besar dari elemen akar, maka pindah ke subpohon kanan.
+     if(root.key < key)
+                return search(root.right, key);
+5) Ulangi prosedur di atas secara rekursif sampai ditemukan kecocokan.
+6) Jika elemen tidak ditemukan atau tidak ada di pohon, maka kembalikan NULL.
+
+
+ Dalam pencarian data BST yaitu kita mencari ke subtree kiri karena di pohon pencarian biner semua datadi subtree
+ kiri lebih kecil dan semua elemen di subtree kanan lebih besar dan langkah tersebut diulang-ulang sampai menemukan
+ SIGRA
+       (Note : Lebih kecil = Kanan, Lebih besar = Kiri).
+       5376 = Root
+       5647 = Lebih besar, jadi ke kiri
+       6384 = Lebih besar, jadi ke kiri
+       6536 = Lebih besar, jadi ke kiri (SIGRA)
+       6538 = Lebih besar, jadi ke kiri
+       7362 = Lebih besar, jadi ke kiri
+       8824 = Lebih besar, jadi ke kiri
+
+ Nah, kita dapat lihat Pada level 4 data dengan nama SIGRA ditemukan.
+
+
+# Soal no.2
+
+int P = 5;
+quick (a, Start, p-1) ; a = 2, 18, 1, 0, 56, 76, 98, 34, 12
+                            0  1   2  3  4   5    6   7   8
+                                                                          .
+quick ( a, 0, 5-1) --> quick sort ( a,0,4)
+int p = parttion ( a, 0, 4)
+Start = 0
+END = 4
+
+Partition
+pivot = a[end] --> pivot = a[4]; --> pivot = 56
+i = (start - 1) i = -1;
+for (j = 0; j <= 4)
+
+J = 0
+if (a [j] < 56) --> if(a[0] < 56)
+    i = i + 1 --> i = 0 ;
+    int t = a[i] --> t = a[0];
+                     t = 2
+    a[i] = a[j] --> a [0] = a[j];
+                    a [0] = 2;
+    a[j] = t --> a[0] = 2;
+
+                    a= 2, 18, 1, 0, 56, 76, 98, 34, 12
+
+
+ J = 1
+ if (a [j] < 56) --> if(a[1] < 56)
+     i = i + 1 --> i =0 ;
+     int t = a[i] --> t = a[1];
+                      t = 18
+     a[i] = a[j] --> a [1] = a[j];
+                     a [1] = 18;
+     a[j] = t --> a[1] = 18;
+
+
+                     a= 2, 18, 1, 0, 56, 76, 98, 34, 12
+
+J = 2
+if (a [j] < 56) --> if(a[2] < 56)
+    i = i + 1 --> i = 0;
+    int t = a[i] --> t = a[2];
+                     t = 1
+    a[i] = a[j] --> a [2] = a[j];
+                    a [2] = 1;
+    a[j] = t --> a[2] = 1;
+
+                    a= 2, 18, 1, 0, 56, 76, 98, 34, 12
+
+ J = 3
+ if (a [j] < 56) --> if(a[3] < 56)
+     i = i + 1 --> i = 0;
+     int t = a[i] --> t = a[3];
+                      t = 0
+     a[i] = a[j] --> a [3] = a[j];
+                     a [3] = 0;
+     a[j] = t --> a[3] = 0;
+
+                     a= 2, 18, 1, 0, 56, 76, 98, 34, 12
+
+J = 4
+ if (a [j] < 56) --> if(a[4] < 56)  salah!
+     i = i + 1 --> i = 0;
+     int t = a[i] --> t = a[4];
+                      t = 56
+     a[i] = a[j] --> a [4] = a[j];
+                     a [4] = 56;
+     a[END] = t --> a[4] = 2;
+     return --> retrun 4
+
+                     a= 2, 18, 1, 0, 56, 76, 98, 34, 12
+
+
+
+
+                                                            ~ SELESAI ~
